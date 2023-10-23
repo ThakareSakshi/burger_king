@@ -50,4 +50,10 @@ button:hover{
     border:2px solid rgb(178, 5, 5);
     background: transparent;
 }
+.order_id{
+    position: fixed;
+    top:20px;
+    right:20px;
+    color:red;
+}
 
