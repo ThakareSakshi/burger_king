@@ -8,20 +8,84 @@ order_btn.addEventListener("click",()=>{
     let coldDrink=document.getElementById("cold-Drink");
 
     let orderID=document.querySelector(".order_id");
-    orderID.innerText=orderid++;
+    orderID.innerText="order ID: "+orderid++;
 
-    if(burger.checked==true){
-       console.log("burger");
-    }
-    if(fries.checked==true){
-        console.log("fires")
-    }
-    if(coldDrink.checked==true){
-        console.log("cold drink")
-    }
+    let new_order=document.createElement("div");
+
+    order_section.innerHTML="";
+
+    let loader=document.querySelector(".loading");
+    loader.classList.add("loader");
+    let promise1= new Promise((resolve,reject)=>{
+           
+
+        if(burger.checked==true){
+            resolve("burger");
+          }
+        //   if(fries.checked==true){
+        //      resolve("fries")
+        //   }
+        //   if(coldDrink.checked==true){
+        //      resolve("cold drink")
+        //   }
+
+          
+   })
+   let promise2= new Promise((resolve,reject)=>{
+           
+
+    
+      if(fries.checked==true){
+         resolve("fries")
+      }
+     
+
+      
+})
+let promise3= new Promise((resolve,reject)=>{
+           
+
+
+      if(coldDrink.checked==true){
+         resolve("cold drink")
+      }
+
+      
+})
+
+   
+
+    setTimeout(()=>{
+        promise1.then((value)=>{
+           
+            let image=document.createElement("img");
+            image.setAttribute("src",value+".jpg");
+            new_order.appendChild(image)
+          })
+          promise2.then((value)=>{
+           
+            let image=document.createElement("img");
+            image.setAttribute("src",value+".jpg");
+            new_order.appendChild(image)
+          })
+          promise3.then((value)=>{
+           
+            let image=document.createElement("img");
+            image.setAttribute("src",value+".jpg");
+            new_order.appendChild(image)
+          })
+          setTimeout(()=>{
+            loader.classList.remove("loader");
+            order_section.innerHTML=new_order.innerHTML
+          },2000)
+  
+      },2000);
+
+      
+     
+ 
 })
 
 
-let promise1= new Promise(resolve ,reject){
 
-}
+

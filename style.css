@@ -5,7 +5,7 @@
 }
 header{
     text-align: center;
-    background: url("https://b.zmtcdn.com/data/pictures/chains/1/49781/32b17daab99d36aeb14554d9ecbbd253.jpg");
+    background: url("https://b.zmtcdn.com/data/pictures/chains/1/49781/32b17daab99d36aeb14554d9ecbbd253.jpg") fixed;
     background-position: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -55,5 +55,30 @@ button:hover{
     top:20px;
     right:20px;
     color:red;
+    font-size: 22px;
+    font-weight: 800;
 }
+img{
+    height: 200px;
+    width: 200px;
+    margin:5px;
+}
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #9d211b; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
